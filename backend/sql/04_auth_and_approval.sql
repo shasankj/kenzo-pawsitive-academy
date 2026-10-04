@@ -48,4 +48,4 @@ ALTER ROLE app_writer SET search_path TO coaching, public;
 --    Generate the hash on your machine:  node scripts/hashPassword.js 'YourStrongPassword'
 --    Then replace the placeholders below and run the statement.
 -- INSERT INTO coaching.users (name, email, role, status, password_hash)
--- VALUES ('Shasank Jabade', 'shasank306@gmail.com', 'ADMIN', 'ACTIVE', 'scrypt$16384$8$5$+YcVn8/Mf8hbParFossiiA==$CYyj1opvfoQ+I6aBUciEGDX7WWThU5G4Bod0gLPpWJGJhCg/3Cu+6He5n/J5DrYfwzsloz7cSREZbVSW/zoQxg==');
+-- VALUES ('Shasank Jabade', '', 'ADMIN', 'ACTIVE', '');
