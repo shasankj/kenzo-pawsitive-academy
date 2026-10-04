@@ -1,0 +1,584 @@
+{
+  "ErrorResponse": {
+    "type": "object",
+    "properties": {
+      "error": {
+        "type": "string"
+      },
+      "message": {
+        "type": "string"
+      }
+    }
+  },
+  "GetCoursesResponse": {
+    "type": "object",
+    "properties": {
+      "courses": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "course_id": {
+              "type": "integer"
+            },
+            "title": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            },
+            "subject": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  },
+  "GetClassroomsResponse": {
+    "type": "object",
+    "properties": {
+      "classrooms": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "classroom_id": {
+              "type": "integer"
+            },
+            "room_number": {
+              "type": "integer"
+            },
+            "room_name": {
+              "type": "string"
+            },
+            "total_rows": {
+              "type": "integer"
+            },
+            "total_columns": {
+              "type": "integer"
+            },
+            "capacity": {
+              "type": "integer"
+            }
+          }
+        }
+      }
+    }
+  },
+  "GetTeachersResponse": {
+    "type": "object",
+    "properties": {
+      "teachers": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "teacher_id": {
+              "type": "integer"
+            },
+            "name": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  },
+  "GetClassesResponse": {
+    "type": "object",
+    "properties": {
+      "classes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "class_id": {
+              "type": "integer"
+            },
+            "date": {
+              "type": "string"
+            },
+            "start_time": {
+              "type": "string"
+            },
+            "end_time": {
+              "type": "string"
+            },
+            "course": {
+              "type": "object",
+              "properties": {
+                "course_id": {
+                  "type": "integer"
+                },
+                "title": {
+                  "type": "string"
+                },
+                "subject": {
+                  "type": "string"
+                }
+              }
+            },
+            "teacher": {
+              "type": "object",
+              "properties": {
+                "teacher_id": {
+                  "type": "integer"
+                },
+                "name": {
+                  "type": "string"
+                }
+              }
+            },
+            "classroom": {
+              "type": "object",
+              "properties": {
+                "classroom_id": {
+                  "type": "integer"
+                },
+                "room_number": {
+                  "type": "integer"
+                },
+                "room_name": {
+                  "type": "string"
+                },
+                "capacity": {
+                  "type": "integer"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "GetClassAvailabilityResponse": {
+    "type": "object",
+    "properties": {
+      "class": {
+        "type": "object",
+        "properties": {
+          "class_id": {
+            "type": "integer"
+          },
+          "start_time": {
+            "type": "string"
+          },
+          "end_time": {
+            "type": "string"
+          },
+          "course": {
+            "type": "object",
+            "properties": {
+              "course_id": {
+                "type": "integer"
+              },
+              "title": {
+                "type": "string"
+              }
+            }
+          },
+          "teacher": {
+            "type": "object",
+            "properties": {
+              "teacher_id": {
+                "type": "integer"
+              },
+              "name": {
+                "type": "string"
+              }
+            }
+          },
+          "classroom": {
+            "type": "object",
+            "properties": {
+              "classroom_id": {
+                "type": "integer"
+              },
+              "room_number": {
+                "type": "integer"
+              },
+              "room_name": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      },
+      "layout": {
+        "type": "object",
+        "properties": {
+          "total_rows": {
+            "type": "integer"
+          },
+          "total_columns": {
+            "type": "integer"
+          }
+        }
+      },
+      "capacity": {
+        "type": "integer"
+      },
+      "available_count": {
+        "type": "integer"
+      },
+      "booked_count": {
+        "type": "integer"
+      },
+      "seats": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "seat_id": {
+              "type": "string"
+            },
+            "row": {
+              "type": "integer"
+            },
+            "col": {
+              "type": "integer"
+            },
+            "available": {
+              "type": "boolean"
+            }
+          }
+        }
+      }
+    }
+  },
+  "SignupRequest": {
+    "type": "object",
+    "properties": {
+      "name": {
+        "type": "string",
+        "maxLength": 100
+      },
+      "email": {
+        "type": "string",
+        "maxLength": 255
+      },
+      "password": {
+        "type": "string",
+        "minLength": 8,
+        "maxLength": 128
+      },
+      "role": {
+        "type": "string",
+        "enum": [
+          "STUDENT",
+          "TEACHER"
+        ]
+      }
+    },
+    "required": [
+      "name",
+      "email",
+      "password",
+      "role"
+    ]
+  },
+  "LoginRequest": {
+    "type": "object",
+    "properties": {
+      "email": {
+        "type": "string"
+      },
+      "password": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "email",
+      "password"
+    ]
+  },
+  "ReviewSignupRequest": {
+    "type": "object",
+    "properties": {
+      "user_id": {
+        "type": "integer",
+        "minimum": 1
+      },
+      "decision": {
+        "type": "string",
+        "enum": [
+          "APPROVE",
+          "REJECT"
+        ]
+      }
+    },
+    "required": [
+      "user_id",
+      "decision"
+    ]
+  },
+  "NewUserRequest": {
+    "type": "object",
+    "properties": {
+      "name": {
+        "type": "string",
+        "maxLength": 100
+      },
+      "email": {
+        "type": "string",
+        "maxLength": 255
+      },
+      "password": {
+        "type": "string",
+        "minLength": 8,
+        "maxLength": 128
+      }
+    },
+    "required": [
+      "name",
+      "email",
+      "password"
+    ]
+  },
+  "AddCourseRequest": {
+    "type": "object",
+    "properties": {
+      "title": {
+        "type": "string",
+        "maxLength": 150
+      },
+      "subject": {
+        "type": "string",
+        "maxLength": 80
+      },
+      "description": {
+        "type": "string",
+        "maxLength": 2000
+      }
+    },
+    "required": [
+      "title",
+      "subject"
+    ]
+  },
+  "AddClassroomRequest": {
+    "type": "object",
+    "properties": {
+      "room_number": {
+        "type": "integer",
+        "minimum": 1
+      },
+      "room_name": {
+        "type": "string",
+        "maxLength": 100
+      },
+      "total_rows": {
+        "type": "integer",
+        "minimum": 1,
+        "maximum": 50
+      },
+      "total_columns": {
+        "type": "integer",
+        "minimum": 1,
+        "maximum": 50
+      }
+    },
+    "required": [
+      "room_number",
+      "room_name",
+      "total_rows",
+      "total_columns"
+    ]
+  },
+  "BookRequest": {
+    "type": "object",
+    "properties": {
+      "class_id": {
+        "type": "integer",
+        "minimum": 1
+      },
+      "row": {
+        "type": "integer",
+        "minimum": 1
+      },
+      "col": {
+        "type": "integer",
+        "minimum": 1
+      }
+    },
+    "required": [
+      "class_id",
+      "row",
+      "col"
+    ]
+  },
+  "SignupResponse": {
+    "type": "object",
+    "properties": {
+      "message": {
+        "type": "string"
+      },
+      "status": {
+        "type": "string"
+      }
+    }
+  },
+  "LoginResponse": {
+    "type": "object",
+    "properties": {
+      "token": {
+        "type": "string"
+      },
+      "token_type": {
+        "type": "string"
+      },
+      "expires_in": {
+        "type": "integer"
+      },
+      "user": {
+        "type": "object",
+        "properties": {
+          "user_id": {
+            "type": "integer"
+          },
+          "name": {
+            "type": "string"
+          },
+          "role": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  },
+  "PendingSignupsResponse": {
+    "type": "object",
+    "properties": {
+      "count": {
+        "type": "integer"
+      },
+      "pending": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "user_id": {
+              "type": "integer"
+            },
+            "name": {
+              "type": "string"
+            },
+            "email": {
+              "type": "string"
+            },
+            "role": {
+              "type": "string"
+            },
+            "created_at": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  },
+  "UserResponse": {
+    "type": "object",
+    "properties": {
+      "user": {
+        "type": "object",
+        "properties": {
+          "user_id": {
+            "type": "integer"
+          },
+          "name": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "role": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          },
+          "created_at": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  },
+  "CourseResponse": {
+    "type": "object",
+    "properties": {
+      "course": {
+        "type": "object",
+        "properties": {
+          "course_id": {
+            "type": "integer"
+          },
+          "title": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "subject": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  },
+  "ClassroomResponse": {
+    "type": "object",
+    "properties": {
+      "classroom": {
+        "type": "object",
+        "properties": {
+          "classroom_id": {
+            "type": "integer"
+          },
+          "room_number": {
+            "type": "integer"
+          },
+          "room_name": {
+            "type": "string"
+          },
+          "total_rows": {
+            "type": "integer"
+          },
+          "total_columns": {
+            "type": "integer"
+          },
+          "capacity": {
+            "type": "integer"
+          }
+        }
+      }
+    }
+  },
+  "BookResponse": {
+    "type": "object",
+    "properties": {
+      "message": {
+        "type": "string"
+      },
+      "booking": {
+        "type": "object",
+        "properties": {
+          "class_id": {
+            "type": "integer"
+          },
+          "seat_id": {
+            "type": "string"
+          },
+          "row": {
+            "type": "integer"
+          },
+          "col": {
+            "type": "integer"
+          }
+        }
+      }
+    }
+  }
+}

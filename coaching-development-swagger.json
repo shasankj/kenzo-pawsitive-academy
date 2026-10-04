@@ -1,0 +1,2015 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "version" : "2026-10-04T00:48:00Z",
+    "title" : "coaching"
+  },
+  "host" : "b8z1k0f7p6.execute-api.us-east-2.amazonaws.com",
+  "basePath" : "/development",
+  "schemes" : [ "https" ],
+  "paths" : {
+    "/" : {
+      "options" : {
+        "produces" : [ "application/json" ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/Empty"
+            },
+            "headers" : {
+              "Access-Control-Allow-Origin" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Methods" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Headers" : {
+                "type" : "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/addClassroom" : {
+      "post" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "AddClassroomRequest",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/AddClassroomRequest"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/ClassroomResponse"
+            }
+          },
+          "401" : {
+            "description" : "401 response",
+            "schema" : {
+              "$ref" : "#/definitions/ErrorResponse"
+            }
+          }
+        }
+      },
+      "options" : {
+        "produces" : [ "application/json" ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/Empty"
+            },
+            "headers" : {
+              "Access-Control-Allow-Origin" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Methods" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Headers" : {
+                "type" : "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/addCourse" : {
+      "post" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "AddCourseRequest",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/AddCourseRequest"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/CourseResponse"
+            }
+          },
+          "401" : {
+            "description" : "401 response",
+            "schema" : {
+              "$ref" : "#/definitions/ErrorResponse"
+            }
+          }
+        }
+      },
+      "options" : {
+        "produces" : [ "application/json" ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/Empty"
+            },
+            "headers" : {
+              "Access-Control-Allow-Origin" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Methods" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Headers" : {
+                "type" : "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/addStudent" : {
+      "post" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "NewUserRequest",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/NewUserRequest"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/UserResponse"
+            }
+          },
+          "500" : {
+            "description" : "500 response",
+            "schema" : {
+              "$ref" : "#/definitions/ErrorResponse"
+            }
+          }
+        }
+      },
+      "options" : {
+        "produces" : [ "application/json" ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/Empty"
+            },
+            "headers" : {
+              "Access-Control-Allow-Origin" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Methods" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Headers" : {
+                "type" : "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/addTeacher" : {
+      "post" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "NewUserRequest",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/NewUserRequest"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/UserResponse"
+            }
+          },
+          "500" : {
+            "description" : "500 response",
+            "schema" : {
+              "$ref" : "#/definitions/ErrorResponse"
+            }
+          }
+        }
+      },
+      "options" : {
+        "produces" : [ "application/json" ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/Empty"
+            },
+            "headers" : {
+              "Access-Control-Allow-Origin" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Methods" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Headers" : {
+                "type" : "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/book" : {
+      "post" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "BookRequest",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/BookRequest"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/BookResponse"
+            }
+          },
+          "400" : {
+            "description" : "400 response",
+            "schema" : {
+              "$ref" : "#/definitions/ErrorResponse"
+            }
+          },
+          "401" : {
+            "description" : "401 response",
+            "schema" : {
+              "$ref" : "#/definitions/ErrorResponse"
+            }
+          },
+          "403" : {
+            "description" : "403 response",
+            "schema" : {
+              "$ref" : "#/definitions/ErrorResponse"
+            }
+          },
+          "404" : {
+            "description" : "404 response",
+            "schema" : {
+              "$ref" : "#/definitions/ErrorResponse"
+            }
+          },
+          "409" : {
+            "description" : "409 response",
+            "schema" : {
+              "$ref" : "#/definitions/ErrorResponse"
+            }
+          }
+        }
+      },
+      "options" : {
+        "produces" : [ "application/json" ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/Empty"
+            },
+            "headers" : {
+              "Access-Control-Allow-Origin" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Methods" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Headers" : {
+                "type" : "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/cancelClass" : {
+      "post" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "Authorization",
+          "in" : "header",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "in" : "body",
+          "name" : "CancelClassRequest",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/CancelClassRequest"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/CancelClassResponse"
+            }
+          },
+          "400" : {
+            "description" : "400 response",
+            "schema" : {
+              "$ref" : "#/definitions/ErrorResponse"
+            }
+          }
+        }
+      },
+      "options" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/Empty"
+            },
+            "headers" : {
+              "Access-Control-Allow-Origin" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Methods" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Headers" : {
+                "type" : "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/cancelCourse" : {
+      "post" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "Authorization",
+          "in" : "header",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "in" : "body",
+          "name" : "CancelClassRequest",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/CancelClassRequest"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/CancelCourseResponse"
+            }
+          },
+          "400" : {
+            "description" : "400 response",
+            "schema" : {
+              "$ref" : "#/definitions/ErrorResponse"
+            }
+          }
+        }
+      },
+      "options" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/Empty"
+            },
+            "headers" : {
+              "Access-Control-Allow-Origin" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Methods" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Headers" : {
+                "type" : "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/changePassword" : {
+      "post" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "Authorization",
+          "in" : "header",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "in" : "body",
+          "name" : "ChangePasswordRequest",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/ChangePasswordRequest"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/MessageResponse"
+            }
+          },
+          "400" : {
+            "description" : "400 response",
+            "schema" : {
+              "$ref" : "#/definitions/ErrorResponse"
+            }
+          },
+          "401" : {
+            "description" : "401 response",
+            "schema" : {
+              "$ref" : "#/definitions/ErrorResponse"
+            }
+          }
+        }
+      },
+      "options" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/Empty"
+            },
+            "headers" : {
+              "Access-Control-Allow-Origin" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Methods" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Headers" : {
+                "type" : "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/getClassAvailability/{class_id}" : {
+      "get" : {
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "class_id",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/GetClassAvailabilityResponse"
+            }
+          },
+          "500" : {
+            "description" : "500 response",
+            "schema" : {
+              "$ref" : "#/definitions/ErrorResponse"
+            }
+          }
+        }
+      },
+      "options" : {
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "class_id",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/Empty"
+            },
+            "headers" : {
+              "Access-Control-Allow-Origin" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Methods" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Headers" : {
+                "type" : "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/getClasses" : {
+      "get" : {
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "classroom_id",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "teacher_id",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "date",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "course_id",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/GetClassesResponse"
+            }
+          },
+          "500" : {
+            "description" : "500 response",
+            "schema" : {
+              "$ref" : "#/definitions/ErrorResponse"
+            }
+          }
+        }
+      },
+      "options" : {
+        "produces" : [ "application/json" ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/Empty"
+            },
+            "headers" : {
+              "Access-Control-Allow-Origin" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Methods" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Headers" : {
+                "type" : "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/getClassrooms" : {
+      "get" : {
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "teacher_id",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "course_id",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/GetClassroomsResponse"
+            }
+          },
+          "500" : {
+            "description" : "500 response",
+            "schema" : {
+              "$ref" : "#/definitions/ErrorResponse"
+            }
+          }
+        }
+      },
+      "options" : {
+        "produces" : [ "application/json" ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/Empty"
+            },
+            "headers" : {
+              "Access-Control-Allow-Origin" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Methods" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Headers" : {
+                "type" : "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/getCourses" : {
+      "get" : {
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "classroom_id",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "teacher_id",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/GetCoursesResponse"
+            }
+          },
+          "500" : {
+            "description" : "500 response",
+            "schema" : {
+              "$ref" : "#/definitions/ErrorResponse"
+            }
+          }
+        }
+      },
+      "options" : {
+        "produces" : [ "application/json" ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/Empty"
+            },
+            "headers" : {
+              "Access-Control-Allow-Origin" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Methods" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Headers" : {
+                "type" : "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/getTeachers" : {
+      "get" : {
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "classroom_id",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "course_id",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/GetTeachersResponse"
+            }
+          },
+          "500" : {
+            "description" : "500 response",
+            "schema" : {
+              "$ref" : "#/definitions/ErrorResponse"
+            }
+          }
+        }
+      },
+      "options" : {
+        "produces" : [ "application/json" ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/Empty"
+            },
+            "headers" : {
+              "Access-Control-Allow-Origin" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Methods" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Headers" : {
+                "type" : "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/login" : {
+      "post" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "LoginRequest",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/LoginRequest"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/LoginResponse"
+            }
+          },
+          "500" : {
+            "description" : "500 response",
+            "schema" : {
+              "$ref" : "#/definitions/ErrorResponse"
+            }
+          }
+        }
+      },
+      "options" : {
+        "produces" : [ "application/json" ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/Empty"
+            },
+            "headers" : {
+              "Access-Control-Allow-Origin" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Methods" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Headers" : {
+                "type" : "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/myBookings" : {
+      "get" : {
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "Authorization",
+          "in" : "header",
+          "required" : false,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/myBookingsResponse"
+            }
+          },
+          "400" : {
+            "description" : "400 response",
+            "schema" : {
+              "$ref" : "#/definitions/ErrorResponse"
+            }
+          }
+        }
+      },
+      "options" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/Empty"
+            },
+            "headers" : {
+              "Access-Control-Allow-Origin" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Methods" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Headers" : {
+                "type" : "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/pendingSignups" : {
+      "get" : {
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "Authorization",
+          "in" : "header",
+          "required" : false,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/PendingSignupsResponse"
+            }
+          },
+          "401" : {
+            "description" : "401 response",
+            "schema" : {
+              "$ref" : "#/definitions/ErrorResponse"
+            }
+          },
+          "403" : {
+            "description" : "403 response",
+            "schema" : {
+              "$ref" : "#/definitions/ErrorResponse"
+            }
+          }
+        }
+      },
+      "options" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/Empty"
+            },
+            "headers" : {
+              "Access-Control-Allow-Origin" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Methods" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Headers" : {
+                "type" : "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/reactivateUser" : {
+      "post" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "Authorization",
+          "in" : "header",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "in" : "body",
+          "name" : "ReactivateUserRequest",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/ReactivateUserRequest"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/UserStatusResponse"
+            }
+          },
+          "400" : {
+            "description" : "400 response",
+            "schema" : {
+              "$ref" : "#/definitions/ErrorResponse"
+            }
+          }
+        }
+      },
+      "options" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/Empty"
+            },
+            "headers" : {
+              "Access-Control-Allow-Origin" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Methods" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Headers" : {
+                "type" : "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/removeUser" : {
+      "post" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "Authorization",
+          "in" : "header",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "in" : "body",
+          "name" : "RemoveUserRequest",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/RemoveUserRequest"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/UserStatusResponse"
+            }
+          },
+          "400" : {
+            "description" : "400 response",
+            "schema" : {
+              "$ref" : "#/definitions/ErrorResponse"
+            }
+          }
+        }
+      },
+      "options" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/Empty"
+            },
+            "headers" : {
+              "Access-Control-Allow-Origin" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Methods" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Headers" : {
+                "type" : "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/reviewSignup" : {
+      "post" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "ReviewSignupRequest",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/ReviewSignupRequest"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/UserResponse"
+            }
+          },
+          "400" : {
+            "description" : "400 response",
+            "schema" : {
+              "$ref" : "#/definitions/ErrorResponse"
+            }
+          },
+          "401" : {
+            "description" : "401 response",
+            "schema" : {
+              "$ref" : "#/definitions/ErrorResponse"
+            }
+          }
+        }
+      },
+      "options" : {
+        "produces" : [ "application/json" ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/Empty"
+            },
+            "headers" : {
+              "Access-Control-Allow-Origin" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Methods" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Headers" : {
+                "type" : "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/signup" : {
+      "post" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "SignupRequest",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/SignupRequest"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/SignupResponse"
+            }
+          },
+          "500" : {
+            "description" : "500 response",
+            "schema" : {
+              "$ref" : "#/definitions/ErrorResponse"
+            }
+          }
+        }
+      },
+      "options" : {
+        "produces" : [ "application/json" ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/Empty"
+            },
+            "headers" : {
+              "Access-Control-Allow-Origin" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Methods" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Headers" : {
+                "type" : "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/suspendUser" : {
+      "post" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "Authorization",
+          "in" : "header",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "in" : "body",
+          "name" : "SuspendUserRequest",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/SuspendUserRequest"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/UserStatusResponse"
+            }
+          },
+          "400" : {
+            "description" : "400 response",
+            "schema" : {
+              "$ref" : "#/definitions/ErrorResponse"
+            }
+          }
+        }
+      },
+      "options" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/Empty"
+            },
+            "headers" : {
+              "Access-Control-Allow-Origin" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Methods" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Headers" : {
+                "type" : "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions" : {
+    "RemoveUserRequest" : {
+      "type" : "object",
+      "required" : [ "user_id" ],
+      "properties" : {
+        "user_id" : {
+          "type" : "integer",
+          "minimum" : 1.0
+        },
+        "reason" : {
+          "type" : "string",
+          "maxLength" : 500
+        },
+        "cancel_classes" : {
+          "type" : "boolean"
+        }
+      }
+    },
+    "UserStatusResponse" : {
+      "type" : "object",
+      "properties" : {
+        "user" : {
+          "type" : "object",
+          "properties" : {
+            "user_id" : {
+              "type" : "integer"
+            },
+            "name" : {
+              "type" : "string"
+            },
+            "email" : {
+              "type" : "string"
+            },
+            "role" : {
+              "type" : "string"
+            },
+            "status" : {
+              "type" : "string"
+            }
+          }
+        },
+        "classes_cancelled" : {
+          "type" : "integer"
+        },
+        "bookings_released" : {
+          "type" : "integer"
+        }
+      }
+    },
+    "CancelClassResponse" : {
+      "type" : "object",
+      "properties" : {
+        "message" : {
+          "type" : "string"
+        },
+        "class" : {
+          "type" : "object",
+          "properties" : {
+            "class_id" : {
+              "type" : "integer"
+            },
+            "course_title" : {
+              "type" : "string"
+            },
+            "start_time" : {
+              "type" : "string"
+            },
+            "end_time" : {
+              "type" : "string"
+            }
+          }
+        },
+        "students_affected" : {
+          "type" : "integer"
+        }
+      }
+    },
+    "LoginRequest" : {
+      "type" : "object",
+      "required" : [ "email", "password" ],
+      "properties" : {
+        "email" : {
+          "type" : "string"
+        },
+        "password" : {
+          "type" : "string"
+        }
+      }
+    },
+    "SignupRequest" : {
+      "type" : "object",
+      "required" : [ "email", "name", "password", "role" ],
+      "properties" : {
+        "name" : {
+          "type" : "string",
+          "maxLength" : 100
+        },
+        "email" : {
+          "type" : "string",
+          "maxLength" : 255
+        },
+        "password" : {
+          "type" : "string",
+          "minLength" : 8,
+          "maxLength" : 128
+        },
+        "role" : {
+          "type" : "string",
+          "enum" : [ "STUDENT", "TEACHER" ]
+        }
+      }
+    },
+    "ChangePasswordRequest" : {
+      "type" : "object",
+      "required" : [ "current_password", "new_password" ],
+      "properties" : {
+        "current_password" : {
+          "type" : "string"
+        },
+        "new_password" : {
+          "type" : "string",
+          "minLength" : 8,
+          "maxLength" : 128
+        }
+      }
+    },
+    "AddClassroomRequest" : {
+      "type" : "object",
+      "required" : [ "room_name", "room_number", "total_columns", "total_rows" ],
+      "properties" : {
+        "room_number" : {
+          "type" : "integer",
+          "minimum" : 1.0
+        },
+        "room_name" : {
+          "type" : "string",
+          "maxLength" : 100
+        },
+        "total_rows" : {
+          "type" : "integer",
+          "minimum" : 1.0,
+          "maximum" : 50.0
+        },
+        "total_columns" : {
+          "type" : "integer",
+          "minimum" : 1.0,
+          "maximum" : 50.0
+        }
+      }
+    },
+    "BookResponse" : {
+      "type" : "object",
+      "properties" : {
+        "message" : {
+          "type" : "string"
+        },
+        "booking" : {
+          "type" : "object",
+          "properties" : {
+            "class_id" : {
+              "type" : "integer"
+            },
+            "seat_id" : {
+              "type" : "string"
+            },
+            "row" : {
+              "type" : "integer"
+            },
+            "col" : {
+              "type" : "integer"
+            }
+          }
+        }
+      }
+    },
+    "GetClassroomsResponse" : {
+      "type" : "object",
+      "properties" : {
+        "classrooms" : {
+          "type" : "array",
+          "items" : {
+            "type" : "object",
+            "properties" : {
+              "classroom_id" : {
+                "type" : "integer"
+              },
+              "room_number" : {
+                "type" : "integer"
+              },
+              "room_name" : {
+                "type" : "string"
+              },
+              "total_rows" : {
+                "type" : "integer"
+              },
+              "total_columns" : {
+                "type" : "integer"
+              },
+              "capacity" : {
+                "type" : "integer"
+              }
+            }
+          }
+        }
+      },
+      "title" : "GetClassroomsResponse"
+    },
+    "Empty" : {
+      "type" : "object",
+      "title" : "Empty Schema"
+    },
+    "PendingSignupsResponse" : {
+      "type" : "object",
+      "properties" : {
+        "count" : {
+          "type" : "integer"
+        },
+        "pending" : {
+          "type" : "array",
+          "items" : {
+            "type" : "object",
+            "properties" : {
+              "user_id" : {
+                "type" : "integer"
+              },
+              "name" : {
+                "type" : "string"
+              },
+              "email" : {
+                "type" : "string"
+              },
+              "role" : {
+                "type" : "string"
+              },
+              "created_at" : {
+                "type" : "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "ReviewSignupRequest" : {
+      "type" : "object",
+      "required" : [ "decision", "user_id" ],
+      "properties" : {
+        "user_id" : {
+          "type" : "integer",
+          "minimum" : 1.0
+        },
+        "decision" : {
+          "type" : "string",
+          "enum" : [ "APPROVE", "REJECT" ]
+        }
+      }
+    },
+    "BookRequest" : {
+      "type" : "object",
+      "required" : [ "class_id", "col", "row" ],
+      "properties" : {
+        "class_id" : {
+          "type" : "integer",
+          "minimum" : 1.0
+        },
+        "row" : {
+          "type" : "integer",
+          "minimum" : 1.0
+        },
+        "col" : {
+          "type" : "integer",
+          "minimum" : 1.0
+        }
+      }
+    },
+    "GetClassAvailabilityResponse" : {
+      "type" : "object",
+      "properties" : {
+        "class" : {
+          "type" : "object",
+          "properties" : {
+            "class_id" : {
+              "type" : "integer"
+            },
+            "start_time" : {
+              "type" : "string"
+            },
+            "end_time" : {
+              "type" : "string"
+            },
+            "course" : {
+              "type" : "object",
+              "properties" : {
+                "course_id" : {
+                  "type" : "integer"
+                },
+                "title" : {
+                  "type" : "string"
+                }
+              }
+            },
+            "teacher" : {
+              "type" : "object",
+              "properties" : {
+                "teacher_id" : {
+                  "type" : "integer"
+                },
+                "name" : {
+                  "type" : "string"
+                }
+              }
+            },
+            "classroom" : {
+              "type" : "object",
+              "properties" : {
+                "classroom_id" : {
+                  "type" : "integer"
+                },
+                "room_number" : {
+                  "type" : "integer"
+                },
+                "room_name" : {
+                  "type" : "string"
+                }
+              }
+            }
+          }
+        },
+        "layout" : {
+          "type" : "object",
+          "properties" : {
+            "total_rows" : {
+              "type" : "integer"
+            },
+            "total_columns" : {
+              "type" : "integer"
+            }
+          }
+        },
+        "capacity" : {
+          "type" : "integer"
+        },
+        "available_count" : {
+          "type" : "integer"
+        },
+        "booked_count" : {
+          "type" : "integer"
+        },
+        "seats" : {
+          "type" : "array",
+          "items" : {
+            "type" : "object",
+            "properties" : {
+              "seat_id" : {
+                "type" : "string"
+              },
+              "row" : {
+                "type" : "integer"
+              },
+              "col" : {
+                "type" : "integer"
+              },
+              "available" : {
+                "type" : "boolean"
+              }
+            }
+          }
+        }
+      },
+      "title" : "GetClassAvailabilityResponse"
+    },
+    "GetTeachersResponse" : {
+      "type" : "object",
+      "properties" : {
+        "teachers" : {
+          "type" : "array",
+          "items" : {
+            "type" : "object",
+            "properties" : {
+              "teacher_id" : {
+                "type" : "integer"
+              },
+              "name" : {
+                "type" : "string"
+              }
+            }
+          }
+        }
+      },
+      "title" : "GetTeachersResponse"
+    },
+    "LoginResponse" : {
+      "type" : "object",
+      "properties" : {
+        "token" : {
+          "type" : "string"
+        },
+        "token_type" : {
+          "type" : "string"
+        },
+        "expires_in" : {
+          "type" : "integer"
+        },
+        "user" : {
+          "type" : "object",
+          "properties" : {
+            "user_id" : {
+              "type" : "integer"
+            },
+            "name" : {
+              "type" : "string"
+            },
+            "role" : {
+              "type" : "string"
+            }
+          }
+        }
+      }
+    },
+    "ReactivateUserRequest" : {
+      "type" : "object",
+      "required" : [ "user_id" ],
+      "properties" : {
+        "user_id" : {
+          "type" : "integer",
+          "minimum" : 1.0
+        }
+      }
+    },
+    "CancelClassRequest" : {
+      "type" : "object",
+      "required" : [ "class_id" ],
+      "properties" : {
+        "class_id" : {
+          "type" : "integer",
+          "minimum" : 1.0
+        },
+        "reason" : {
+          "type" : "string",
+          "maxLength" : 500
+        }
+      }
+    },
+    "ClassroomResponse" : {
+      "type" : "object",
+      "properties" : {
+        "classroom" : {
+          "type" : "object",
+          "properties" : {
+            "classroom_id" : {
+              "type" : "integer"
+            },
+            "room_number" : {
+              "type" : "integer"
+            },
+            "room_name" : {
+              "type" : "string"
+            },
+            "total_rows" : {
+              "type" : "integer"
+            },
+            "total_columns" : {
+              "type" : "integer"
+            },
+            "capacity" : {
+              "type" : "integer"
+            }
+          }
+        }
+      }
+    },
+    "MessageResponse" : {
+      "type" : "object",
+      "properties" : {
+        "message" : {
+          "type" : "string"
+        }
+      }
+    },
+    "SuspendUserRequest" : {
+      "type" : "object",
+      "required" : [ "user_id" ],
+      "properties" : {
+        "user_id" : {
+          "type" : "integer",
+          "minimum" : 1.0
+        },
+        "reason" : {
+          "type" : "string",
+          "maxLength" : 500
+        },
+        "cancel_classes" : {
+          "type" : "boolean"
+        },
+        "release_bookings" : {
+          "type" : "boolean"
+        }
+      }
+    },
+    "CancelCourseResponse" : {
+      "type" : "object",
+      "properties" : {
+        "message" : {
+          "type" : "string"
+        },
+        "course" : {
+          "type" : "object",
+          "properties" : {
+            "course_id" : {
+              "type" : "integer"
+            },
+            "title" : {
+              "type" : "string"
+            }
+          }
+        },
+        "classes_cancelled" : {
+          "type" : "integer"
+        },
+        "students_affected" : {
+          "type" : "integer"
+        }
+      }
+    },
+    "CourseResponse" : {
+      "type" : "object",
+      "properties" : {
+        "course" : {
+          "type" : "object",
+          "properties" : {
+            "course_id" : {
+              "type" : "integer"
+            },
+            "title" : {
+              "type" : "string"
+            },
+            "description" : {
+              "type" : "string"
+            },
+            "subject" : {
+              "type" : "string"
+            }
+          }
+        }
+      }
+    },
+    "SignupResponse" : {
+      "type" : "object",
+      "properties" : {
+        "message" : {
+          "type" : "string"
+        },
+        "status" : {
+          "type" : "string"
+        }
+      }
+    },
+    "ErrorResponse" : {
+      "type" : "object",
+      "properties" : {
+        "error" : {
+          "type" : "string"
+        },
+        "message" : {
+          "type" : "string"
+        }
+      },
+      "title" : "ErrorResponse"
+    },
+    "GetCoursesResponse" : {
+      "type" : "object",
+      "properties" : {
+        "courses" : {
+          "type" : "array",
+          "items" : {
+            "type" : "object",
+            "properties" : {
+              "course_id" : {
+                "type" : "integer"
+              },
+              "title" : {
+                "type" : "string"
+              },
+              "description" : {
+                "type" : "string"
+              },
+              "subject" : {
+                "type" : "string"
+              }
+            }
+          }
+        }
+      },
+      "title" : "GetCoursesResponse"
+    },
+    "UserResponse" : {
+      "type" : "object",
+      "properties" : {
+        "user" : {
+          "type" : "object",
+          "properties" : {
+            "user_id" : {
+              "type" : "integer"
+            },
+            "name" : {
+              "type" : "string"
+            },
+            "email" : {
+              "type" : "string"
+            },
+            "role" : {
+              "type" : "string"
+            },
+            "status" : {
+              "type" : "string"
+            },
+            "created_at" : {
+              "type" : "string"
+            }
+          }
+        }
+      }
+    },
+    "myBookingsResponse" : {
+      "type" : "object",
+      "properties" : {
+        "count" : {
+          "type" : "integer"
+        },
+        "courses" : {
+          "type" : "array",
+          "items" : {
+            "type" : "object",
+            "properties" : {
+              "course_id" : {
+                "type" : "integer"
+              },
+              "title" : {
+                "type" : "string"
+              },
+              "subject" : {
+                "type" : "string"
+              },
+              "classes_booked" : {
+                "type" : "integer"
+              }
+            }
+          }
+        },
+        "bookings" : {
+          "type" : "array",
+          "items" : {
+            "type" : "object",
+            "properties" : {
+              "class_id" : {
+                "type" : "integer"
+              },
+              "status" : {
+                "type" : "string"
+              },
+              "start_time" : {
+                "type" : "string"
+              },
+              "end_time" : {
+                "type" : "string"
+              },
+              "booked_at" : {
+                "type" : "string"
+              },
+              "course" : {
+                "type" : "object",
+                "properties" : {
+                  "course_id" : {
+                    "type" : "integer"
+                  },
+                  "title" : {
+                    "type" : "string"
+                  },
+                  "subject" : {
+                    "type" : "string"
+                  }
+                }
+              },
+              "teacher" : {
+                "type" : "object",
+                "properties" : {
+                  "teacher_id" : {
+                    "type" : "integer"
+                  },
+                  "name" : {
+                    "type" : "string"
+                  }
+                }
+              },
+              "classroom" : {
+                "type" : "object",
+                "properties" : {
+                  "classroom_id" : {
+                    "type" : "integer"
+                  },
+                  "room_number" : {
+                    "type" : "integer"
+                  },
+                  "room_name" : {
+                    "type" : "string"
+                  }
+                }
+              },
+              "seat" : {
+                "type" : "object",
+                "properties" : {
+                  "seat_id" : {
+                    "type" : "string"
+                  },
+                  "row" : {
+                    "type" : "integer"
+                  },
+                  "col" : {
+                    "type" : "integer"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "NewUserRequest" : {
+      "type" : "object",
+      "required" : [ "email", "name", "password" ],
+      "properties" : {
+        "name" : {
+          "type" : "string",
+          "maxLength" : 100
+        },
+        "email" : {
+          "type" : "string",
+          "maxLength" : 255
+        },
+        "password" : {
+          "type" : "string",
+          "minLength" : 8,
+          "maxLength" : 128
+        }
+      }
+    },
+    "GetClassesResponse" : {
+      "type" : "object",
+      "properties" : {
+        "classes" : {
+          "type" : "array",
+          "items" : {
+            "type" : "object",
+            "properties" : {
+              "class_id" : {
+                "type" : "integer"
+              },
+              "date" : {
+                "type" : "string"
+              },
+              "start_time" : {
+                "type" : "string"
+              },
+              "end_time" : {
+                "type" : "string"
+              },
+              "course" : {
+                "type" : "object",
+                "properties" : {
+                  "course_id" : {
+                    "type" : "integer"
+                  },
+                  "title" : {
+                    "type" : "string"
+                  },
+                  "subject" : {
+                    "type" : "string"
+                  }
+                }
+              },
+              "teacher" : {
+                "type" : "object",
+                "properties" : {
+                  "teacher_id" : {
+                    "type" : "integer"
+                  },
+                  "name" : {
+                    "type" : "string"
+                  }
+                }
+              },
+              "classroom" : {
+                "type" : "object",
+                "properties" : {
+                  "classroom_id" : {
+                    "type" : "integer"
+                  },
+                  "room_number" : {
+                    "type" : "integer"
+                  },
+                  "room_name" : {
+                    "type" : "string"
+                  },
+                  "capacity" : {
+                    "type" : "integer"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "title" : "GetClassesResponse"
+    },
+    "AddCourseRequest" : {
+      "type" : "object",
+      "required" : [ "subject", "title" ],
+      "properties" : {
+        "title" : {
+          "type" : "string",
+          "maxLength" : 150
+        },
+        "subject" : {
+          "type" : "string",
+          "maxLength" : 80
+        },
+        "description" : {
+          "type" : "string",
+          "maxLength" : 2000
+        }
+      }
+    }
+  },
+  "x-amazon-apigateway-security-policy" : "SecurityPolicy_TLS13_1_3_2025_09",
+  "x-amazon-apigateway-endpoint-access-mode" : "BASIC"
+}

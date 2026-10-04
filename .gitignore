@@ -1,0 +1,41 @@
+# Dependencies
+node_modules/
+
+# Build output
+frontend/dist/
+dist/
+build/
+.vite/
+
+# Environment and secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Logs
+*.log
+npm-debug.log*
+
+# Lambda deployment artifacts
+*.zip
+.aws-sam/
+.serverless/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/
+*.swp
+
+# Test and coverage output
+coverage/
+
+# Claude Code local settings
+.claude/settings.local.json
