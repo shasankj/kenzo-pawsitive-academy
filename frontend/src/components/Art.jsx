@@ -55,7 +55,7 @@ export function Logo({ size = 34 }) {
   return (
     <span className="logo">
       <span className="logo-mark"><Paw size={size * 0.62} /></span>
-      <span className="logo-text">Kenzo Positive<em>Academy</em></span>
+      <span className="logo-text">Kenzo Pawsitive<em>Academy</em></span>
     </span>
   )
 }
