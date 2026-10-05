@@ -123,8 +123,9 @@ export default function CourseDetail() {
       toast(`Booked ${ok.map((s) => seatLabel(s.row, s.col)).join(', ')} — see you in class! 🐾`)
     }
     bad.forEach((b) => toast(`Seat ${seatLabel(b.seat.row, b.seat.col)}: ${b.msg}`, 'error'))
-    await Promise.all([loadSeats(classId, true), cat.refreshBookings()])
+    // Clear first: otherwise the reload sees our own just-booked seats as "snagged by someone else"
     setPicked(new Map())
+    await Promise.all([loadSeats(classId, true), cat.refreshBookings()])
   }
 
   if (cat.loading) return <Page><Spinner /></Page>
