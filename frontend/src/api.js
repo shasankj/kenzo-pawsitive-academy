@@ -1,9 +1,6 @@
-// Dev: same-origin '/api' (proxied by Vite, see vite.config.js). Prod: the real API URL,
-// which requires the backend to return CORS headers on its responses.
-const BASE = (
-  import.meta.env.VITE_API_BASE ||
-  (import.meta.env.DEV ? '/api' : 'https://b8z1k0f7p6.execute-api.us-east-2.amazonaws.com/development')
-).replace(/\/$/, '')
+// Dev: same-origin '/api' (proxied by Vite, see vite.config.js). Prod: VITE_API_BASE, which is
+// required at build time and needs the backend to return CORS headers on its responses.
+const BASE = (import.meta.env.VITE_API_BASE || (import.meta.env.DEV ? '/api' : '')).replace(/\/$/, '')
 
 const STORE_KEY = 'pawsitive.session'
 

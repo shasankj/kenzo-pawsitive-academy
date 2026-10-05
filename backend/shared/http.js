@@ -15,9 +15,17 @@ class Reply {
 }
 export const created = (body) => new Reply(201, body);
 
+// ALLOWED_ORIGIN is the real frontend origin (e.g. https://dxxxx.cloudfront.net), never "*".
+// API Gateway's "Enable CORS" only covers OPTIONS; with Lambda proxy integration the
+// real responses must carry the header themselves.
+const corsHeaders = () =>
+  process.env.ALLOWED_ORIGIN
+    ? { "Access-Control-Allow-Origin": process.env.ALLOWED_ORIGIN, Vary: "Origin" }
+    : {};
+
 const json = (statusCode, body) => ({
   statusCode,
-  headers: { "Content-Type": "application/json" },
+  headers: { "Content-Type": "application/json", ...corsHeaders() },
   body: JSON.stringify(body),
 });
 
