@@ -4,6 +4,8 @@ A class-booking app for a (dog) training academy. Pups browse courses, pick an e
 
 It is a **React single-page app** talking to a **serverless AWS backend** (API Gateway + Lambda + PostgreSQL + DynamoDB + SNS/SQS/SES).
 
+**Live demo:** https://dla0gzpanyc4d.cloudfront.net/ · **Case study:** [portfolio write-up with an animated architecture diagram](https://shasankj.github.io/portfolio/projects/kenzo-pawsitive-academy/)
+
 ```
 ┌────────────┐   HTTPS/JSON    ┌─────────────┐   ┌──────────────────────────┐
 │ React SPA  │ ──────────────▶ │ API Gateway │──▶│ Lambda functions (Node)  │
@@ -16,6 +18,18 @@ It is a **React single-page app** talking to a **serverless AWS backend** (API G
                                                                         ▼
                                           SNS topic ──▶ SQS queue ──▶ sendEmails Lambda ──▶ SES
 ```
+
+## Quick start
+
+Run the frontend against the deployed API (needs Node 20.19 or newer):
+
+```bash
+cd frontend
+npm install
+npm run dev      # http://localhost:5173, proxies /api to API Gateway
+```
+
+You need an existing **ACTIVE** account to log in: sign up in the UI and have an admin approve it, or create the first admin (see [Backend](#backend-your-own-aws-account)). There is no local backend runner, so building your own backend means following the step-by-step guide in [`WORKBOOK.md`](WORKBOOK.md).
 
 ## Roles
 
@@ -90,11 +104,14 @@ npm run dev        # http://localhost:5173
 
 In dev, requests go to `/api`, which Vite proxies to the deployed API Gateway (`/development` stage) configured in `vite.config.js`. The deployed API does not send CORS headers on real responses, so the proxy is required locally.
 
-To point at a different API, set `VITE_API_BASE` (for example in `frontend/.env.local`):
+To point at a different API, set `VITE_API_BASE` (for example in `frontend/.env.local`; copy `frontend/.env.example`):
 
-```
-VITE_API_BASE=https://<api-id>.execute-api.<region>.amazonaws.com/<stage>
-```
+| Variable | Used by | Description |
+|---|---|---|
+| `VITE_API_BASE` | `npm run build` | API Gateway invoke URL including the stage, for example `https://<api-id>.execute-api.<region>.amazonaws.com/<stage>`. Required for production builds. |
+| `VITE_DEV_API_TARGET` | `npm run dev` | Host and stage the Vite `/api` proxy forwards to. Leave `VITE_API_BASE` unset in dev to use it. |
+
+`VITE_*` values are compiled into the page and are public. Never put a secret in them.
 
 Other commands: `npm run build` (output in `dist/`), `npm run preview`.
 
@@ -127,6 +144,24 @@ There is no local backend runner or infrastructure-as-code. Backend setup is man
 | `APP_TIMEZONE` | DB + email | Default `UTC` |
 | `SHOW_PAST` | list/book functions | `true` shows and allows past classes (testing only) |
 | `REQUIRE_ENROLLMENT` | `book` | `true` requires an enrollment row |
+
+## Testing
+
+There is no automated test suite in the repository yet (see [Known limitations](#known-limitations)). During development each handler was exercised against fake database, DynamoDB, SNS and SES clients, and the deployed API was checked with `curl` and Postman. [`WORKBOOK.md`](WORKBOOK.md) section 8 lists the manual test cases: test events per function, end-to-end calls through API Gateway, the email pipeline and negative tests.
+
+## Deployment
+
+**Frontend.** The live site is served through CloudFront.
+
+```bash
+cd frontend
+VITE_API_BASE=https://<api-id>.execute-api.<region>.amazonaws.com/<stage> npm run build
+# publish frontend/dist/ to the origin behind your CloudFront distribution (for example an S3 bucket), then invalidate the cache
+```
+
+The app uses client-side routing (`BrowserRouter`), so the distribution must return `index.html` for unknown paths (for example by mapping 403 and 404 responses to `/index.html`). Because the deployed API only sends CORS headers on `OPTIONS` (see [Known limitations](#known-limitations)), either add `Access-Control-Allow-Origin` to the Lambda responses in `shared/http.js` or route `/api` through the same CloudFront distribution.
+
+**Backend.** Manual AWS setup, in order: RDS and SQL scripts, DynamoDB table, SNS and SQS, SES, Lambdas, API Gateway ([Backend](#backend-your-own-aws-account)). There is no infrastructure-as-code yet; a SAM or CDK template is the next step.
 
 ## Walkthrough
 
